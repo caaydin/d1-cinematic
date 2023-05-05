@@ -15,15 +15,15 @@ class Studio extends Phaser.Scene {
             delay:750,
             x:480,
             y:270,
-            duration: 550,
+            duration: 600,
             ease: 'Sine.easeInOut',
         });
 
-        this.time.delayedCall(3000, () => {
+        this.time.delayedCall(3100, () => {
             this.cameras.main.fadeOut(500);
             this.time.delayedCall(650, () => {
                 this.scene.start('loadingScene');
             })
-        })
+        });
     }
 }
