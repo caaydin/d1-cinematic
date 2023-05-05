@@ -15,7 +15,7 @@ class Studio extends Phaser.Scene {
             delay:750,
             x:480,
             y:270,
-            duration: 500,
+            duration: 550,
             ease: 'Sine.easeInOut',
         });
 
