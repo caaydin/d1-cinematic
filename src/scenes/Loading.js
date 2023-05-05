@@ -6,13 +6,13 @@ class Loading extends Phaser.Scene {
     preload() {
         this.load.image('loading', 'assets/loading_text.png');
         this.load.image('carrot', 'assets/loading_image.png');
-        this.load.audio('bounce', 'assets/383240__jofae__bounce.mp3')
+        this.load.audio('bounce', 'assets/383240__jofae__bounce.mp3');
     }
 
     create() {
         this.cameras.main.fadeIn(100);
         const text = this.add.sprite(480, 490, 'loading');
-        const bounce = this.sound.add('bounce', { loop: false });
+        const bounce = this.sound.add('bounce', {});
         const carrot = this.add.sprite(240, -100, 'carrot');
         const carrot2 = this.add.sprite(480, -100, 'carrot');
         const carrot3 = this.add.sprite(720, -100, 'carrot');
@@ -21,7 +21,6 @@ class Loading extends Phaser.Scene {
             bounce.play();
             this.tweens.add({
                 targets: carrot,
-                x:240,
                 y:270,
                 duration: 200,
                 ease: 'Linear',
@@ -32,7 +31,6 @@ class Loading extends Phaser.Scene {
             bounce.play();
             this.tweens.add({
                 targets: carrot2,
-                x:480,
                 y:270,
                 duration: 200,
                 ease: 'Linear',
@@ -43,17 +41,18 @@ class Loading extends Phaser.Scene {
             bounce.play();
             this.tweens.add({
                 targets: carrot3,
-                x:720,
                 y:270,
                 duration: 200,
                 ease: 'Linear',
             });
         });
-        
-        this.time.delayedCall(2700, () => {
-            this.input.once('pointerdown', () => {
-                this.scene.start('menuScene');
-            });
+
+        this.time.delayedCall(3300, () => {
+            this.cameras.main.fadeOut(50);
+        });
+
+        this.time.delayedCall(3350, () => {
+            this.scene.start('menuScene');
         });
     }
 }

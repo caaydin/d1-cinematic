@@ -8,22 +8,23 @@ class Studio extends Phaser.Scene {
     }
 
     create() {
-        const logo = this.add.sprite(-500, 270, 'logo');
+        const logo = this.add.sprite(-500, 270, 'logo').setAlpha(0);
 
         this.tweens.add({
             targets: logo, 
+            alpha: 1,
             delay:750,
             x:480,
-            y:270,
             duration: 600,
             ease: 'Sine.easeInOut',
         });
 
         this.time.delayedCall(3100, () => {
             this.cameras.main.fadeOut(500);
-            this.time.delayedCall(650, () => {
-                this.scene.start('loadingScene');
-            })
         });
+
+        this.time.delayedCall(3750, () => {
+            this.scene.start('loadingScene');
+        })
     }
 }
