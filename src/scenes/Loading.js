@@ -17,6 +17,7 @@ class Loading extends Phaser.Scene {
         const carrot2 = this.add.sprite(480, -100, 'carrot');
         const carrot3 = this.add.sprite(720, -100, 'carrot');
 
+        // drop first carrot
         this.time.delayedCall(500, () => {
             bounce.play();
             this.tweens.add({
@@ -27,6 +28,7 @@ class Loading extends Phaser.Scene {
             });
         });
 
+        // second carrot
         this.time.delayedCall(1500, () => {
             bounce.play();
             this.tweens.add({
@@ -37,6 +39,7 @@ class Loading extends Phaser.Scene {
             });
         });
 
+        // third carrot
         this.time.delayedCall(2500, () => {
             bounce.play();
             this.tweens.add({
@@ -47,10 +50,12 @@ class Loading extends Phaser.Scene {
             });
         });
 
+        // fade out
         this.time.delayedCall(3300, () => {
             this.cameras.main.fadeOut(50);
         });
 
+        // move to menu scene
         this.time.delayedCall(3350, () => {
             this.scene.start('menuScene');
         });

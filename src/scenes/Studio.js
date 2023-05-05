@@ -10,6 +10,7 @@ class Studio extends Phaser.Scene {
     create() {
         const logo = this.add.sprite(-500, 270, 'logo').setAlpha(0);
 
+        // logo animation
         this.tweens.add({
             targets: logo, 
             alpha: 1,
@@ -19,10 +20,12 @@ class Studio extends Phaser.Scene {
             ease: 'Sine.easeInOut',
         });
 
+        // fade out
         this.time.delayedCall(3100, () => {
             this.cameras.main.fadeOut(500);
         });
 
+        // move to loading scene
         this.time.delayedCall(3750, () => {
             this.scene.start('loadingScene');
         })
