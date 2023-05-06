@@ -43,5 +43,16 @@ class Menu extends Phaser.Scene {
                 this.scene.start('creditsScene');
             });
         });
+
+        // if player still hasn't clicked after a few seconds
+        this.time.delayedCall(3000, () => {
+            this.textObject = this.add.text(480, 500,
+                "(CLICK TO CONTINUE)", //text
+                {
+                    font: "24px",
+                    color: "#DA70D6",
+                }
+            ).setOrigin(0.5, 0.5);
+        });
     }
 }
