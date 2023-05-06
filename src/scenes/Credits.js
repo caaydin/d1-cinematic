@@ -3,18 +3,16 @@ class Credits extends Phaser.Scene {
         super({ key: 'creditsScene'});
     }
 
-    preload() {
-    }
+    preload() {}
 
     create() {
-        this.textObject = this.add.text(
-            0, //x
-            0,//y
-            "hello world!", //text
-            {
-                font: "40px Arial",
-                color: "#DA70D6",
-            } //style
+        let box = this.add.text(230, 100,
+        `CREDITS\nImages: Made by me using Clip Studio Paint & Aseprite\nSound:\n- Menu music by davo32 from Freesound\n- Loading screen sound effect by Jofae from Freesound\n- I edited them using Audacity`,
+        {
+            font: "24px",
+            color: "#FF71FD",
+        }
         );
+        box.setWordWrapWidth(500);
     }
 }

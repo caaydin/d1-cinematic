@@ -22,7 +22,7 @@ class Loading extends Phaser.Scene {
             bounce.play();
             this.tweens.add({
                 targets: carrot,
-                y:270,
+                y: 270,
                 duration: 200,
                 ease: 'Linear',
             });
@@ -33,7 +33,7 @@ class Loading extends Phaser.Scene {
             bounce.play();
             this.tweens.add({
                 targets: carrot2,
-                y:270,
+                y: 270,
                 duration: 200,
                 ease: 'Linear',
             });
@@ -44,7 +44,7 @@ class Loading extends Phaser.Scene {
             bounce.play();
             this.tweens.add({
                 targets: carrot3,
-                y:270,
+                y: 270,
                 duration: 200,
                 ease: 'Linear',
             });

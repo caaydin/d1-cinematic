@@ -14,8 +14,8 @@ class Studio extends Phaser.Scene {
         this.tweens.add({
             targets: logo, 
             alpha: 1,
-            delay:750,
-            x:480,
+            delay: 750,
+            x: 480,
             duration: 600,
             ease: 'Sine.easeInOut',
         });
@@ -28,6 +28,6 @@ class Studio extends Phaser.Scene {
         // move to loading scene
         this.time.delayedCall(3750, () => {
             this.scene.start('loadingScene');
-        })
+        });
     }
 }
