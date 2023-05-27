@@ -1,8 +1,8 @@
 let config = {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    type: Phaser.AUTO,
     width: 960,
     height: 540,
+    backgroundColor: '#000000',
     scene: [ Studio, Loading, Menu, Credits ],
 }
 
